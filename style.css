@@ -11,7 +11,7 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #333;
-    background-image: url('forest.jpeg'); /* Local image in root folder */
+    background-image: linear-gradient(rgba(17, 24, 39, 0.55), rgba(17, 24, 39, 0.25)), url('images/mountain.webp');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -65,6 +65,7 @@ body {
 /* Adjust main content margin when sidebar is expanded */
 main.content-shifted {
     margin-left: 250px;
+    transition: margin-left 0.3s ease-in-out;
 }
 
 /* --- Animations and Transitions --- */
@@ -146,4 +147,14 @@ main.content-shifted {
     height: 150px; /* Fixed height for image consistency */
     object-fit: cover; /* Ensure image covers the area */
     border-radius: 0.75rem 0.75rem 0 0; /* Rounded top corners */
+}
+
+@media (max-width: 768px) {
+    main.content-shifted {
+        margin-left: 0;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
 }
